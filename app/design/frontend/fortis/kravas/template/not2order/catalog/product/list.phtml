@@ -33,7 +33,17 @@
 ?>
 
 <?php
-    $_productCollection=$this->getLoadedProductCollection();
+    //    $_productCollection=$this->getLoadedProductCollection();
+    $controller_name = $this->getRequest()->getControllerName();
+    if($controller_name == 'result' || $controller_name == 'advanced'){
+        $_productCollection = $this->getLoadedProductCollection();
+    }  else {
+        $_productCollection = clone $this->getLoadedProductCollection();
+        $_productCollection->clear()
+            ->addAttributeToFilter('image', array('neq' => 'no_selection'))
+            ->load();
+    }
+    
     $_collectionSize = $_productCollection->count();
 	
 	$_helper = $this->helper('catalog/output');

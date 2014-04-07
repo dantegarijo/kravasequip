@@ -228,19 +228,11 @@
 			   
             <?php if ($addtoLinksHtml = $this->getChildHtml('addto')): //compare, wishlist, to friend ?>
                 <div class="action-box clearer">
-					<?php //echo $addtoLinksHtml; ?>
+					<?php echo $addtoLinksHtml; ?>
 				</div>
             <?php endif; ?>
             
             <?php echo $this->getChildHtml('other'); ?>
-
-            <?php if ($tmpHtml = $this->getChildHtml('block_product_primary_bottom')): ?>
-            	<div class="feature-wrapper top-border block_product_primary_bottom"><?php echo $tmpHtml; ?></div>
-            <?php endif; ?>
-            
-            <?php if ($tmpHtml = $this->getChildHtml('product_primary_bottom_placeholder')): //Placeholder for extensions ?>
-            	<div class="feature-wrapper top-border"><?php echo $tmpHtml; ?></div>
-            <?php endif; ?>
 
         </div> <!-- end: product-shop -->
         
@@ -287,6 +279,7 @@
         </div> <!-- end: product-top-wrapper -->
         <div class="product-top-wrapper-cover-bottom"></div>
     </form>
+                
     <script type="text/javascript">
     //<![CDATA[
         var productAddToCartForm = new VarienForm('product_addtocart_form');
@@ -358,4 +351,13 @@
     	<div class="box-additional box-up-sell <?php echo $collatPrimaryColGridClass; ?>"><?php echo $section['upsell']; ?></div>
     <?php endif; ?>
     
+        
+    <?php if ($tmpHtml = $this->getChildHtml('block_product_primary_bottom')): ?>
+        <div class="feature-wrapper top-border block_product_primary_bottom"><?php echo $tmpHtml; ?></div>
+    <?php endif; ?>
+
+    <?php if ($tmpHtml = $this->getChildHtml('product_primary_bottom_placeholder')): //Placeholder for extensions ?>
+        <div class="feature-wrapper top-border"><?php echo $tmpHtml; ?></div>
+    <?php endif; ?>
+
 </div> <!-- end: product-view -->
