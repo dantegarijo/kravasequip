@@ -216,3 +216,9 @@ ol.c2q {
 
 .qquote-client-collaterals .left{
 }
+
+
+/*Added by NHD*/
+.quote-billing-address{
+    display: none;
+}
